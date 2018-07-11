@@ -8,6 +8,10 @@ The "registerForAvailability" method will accept a collection of templates (rath
 
 As usual, if using an IDE like IntelliJ you need to create a java project with the correct classes added as libraries, then paste the code in and run it.
 
+You also need to add the VM args to the run configuration:
+
+    -Djava.rmi.server.useCodebaseOnly=false -Djava.security.policy=policy.all
+
 
 If running from a command line, set up the classpath with:
 
@@ -19,7 +23,7 @@ then compile with
 
 and run with:
 
-	java RegisterForAvailabilityTest
+	java -Djava.rmi.server.useCodebaseOnly=false -Djava.security.policy=policy.all RegisterForAvailabilityTest
 
 
 Look at the code, which has extensive comments, to see what is happening.
